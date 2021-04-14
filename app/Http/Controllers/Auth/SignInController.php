@@ -7,8 +7,21 @@ use Illuminate\Http\Request;
 
 class SignInController extends Controller
 {
-    public function __invoke()
+    public function __invoke(Request $request)
     {
-        dd('Done');
+        $this->validate($request, [
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+
+        if (!$token = auth()->attempt($request->only('email', 'password'))) {
+            return response()->json([
+                'errors' => [
+                    'email' => ['Could not sign in']
+                ]
+            ]);
+        }
+
+        return response()->json(['data' => compact('token')]);
     }
 }
