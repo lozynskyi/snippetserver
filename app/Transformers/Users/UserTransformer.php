@@ -32,10 +32,10 @@ class UserTransformer extends TransformerAbstract
      */
     public function transform(User $user)
     {
-        return [
+        return ['user' => [
             'id' => $user->id,
             'email' => $user->email,
             'name' => $user->name
-        ];
+        ]];
     }
 }

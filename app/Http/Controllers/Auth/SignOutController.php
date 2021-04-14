@@ -3,10 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Transformers\Users\UserTransformer;
 use Illuminate\Http\Request;
 
-class MeController extends Controller
+class SignOutController extends Controller
 {
     public function __construct()
     {
@@ -16,9 +15,6 @@ class MeController extends Controller
     public function __invoke(Request $request)
     {
 
-        return fractal()
-            ->item($request->user())
-            ->transformWith(new UserTransformer())
-            ->toArray();
+        auth()->logout();
     }
 }
