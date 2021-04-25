@@ -11,8 +11,10 @@ class SignUpController extends Controller
     public function __invoke(Request $request): JsonResponse
     {
         $this->validate($request, [
-            'email' => 'required|email',
-            'password' => 'required'
+            'email' => 'required|email|unique:users,email',
+            'username' => 'required|alpha_dash|unique:users,username',
+            'name' => 'required',
+            'password' => 'nullable|min:6'
         ]);
 
     }
