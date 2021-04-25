@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
@@ -18,5 +19,6 @@ class SignUpController extends Controller
             'password_confirmation' => 'required'
         ]);
 
+        $user = User::create($request->only('email', 'name', 'username', 'password'));
     }
 }
