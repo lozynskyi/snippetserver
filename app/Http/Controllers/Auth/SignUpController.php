@@ -14,7 +14,8 @@ class SignUpController extends Controller
             'email' => 'required|email|unique:users,email',
             'username' => 'required|alpha_dash|unique:users,username',
             'name' => 'required',
-            'password' => 'nullable|min:6'
+            'password' => 'required|min:6|confirmed',
+            'password_confirmation' => 'required'
         ]);
 
     }
