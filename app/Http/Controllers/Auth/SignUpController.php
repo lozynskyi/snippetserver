@@ -20,5 +20,10 @@ class SignUpController extends Controller
         ]);
 
         $user = User::create($request->only('email', 'name', 'username', 'password'));
+
+        return fractal()
+            ->item($user)
+            ->transformWith(new UserTransformer())
+            ->toArray();
     }
 }
