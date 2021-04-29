@@ -1,0 +1,24 @@
+<?php
+
+namespace App\Http\Controllers\User;
+
+use App\Http\Controllers\Controller;
+use App\Transformers\Users\UserTransformer;
+use Illuminate\Http\Request;
+
+class PersonController extends Controller
+{
+    public function __construct()
+    {
+        $this->middleware(['auth:api']);
+    }
+
+    public function __invoke(Request $request): array
+    {
+
+        return fractal()
+            ->item($request->user())
+            ->transformWith(new UserTransformer())
+            ->toArray();
+    }
+}
