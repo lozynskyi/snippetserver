@@ -6,5 +6,9 @@ Route::group(['prefix'=>'auth', 'namespace'=>'App\Http\Controllers\Auth'], funct
     Route::post('signin', 'SignInController');
     Route::post('signup', 'SignUpController');
     Route::post('signout', 'SignOutController');
-    Route::get('user', 'UserController');
+    Route::get('me', 'MeController');
+});
+
+Route::group(['prefix'=>'user/{user}', 'namespace'=>'App\Http\Controllers\User'], function() {
+    Route::post('signin', 'PersonController');
 });
