@@ -10,5 +10,5 @@ Route::group(['prefix'=>'auth', 'namespace'=>'App\Http\Controllers\Auth'], funct
 });
 
 Route::group(['prefix'=>'user/{user}', 'namespace'=>'App\Http\Controllers\User'], function() {
-    Route::post('signin', 'PersonController');
+    Route::get('', 'PersonController@show');
 });
