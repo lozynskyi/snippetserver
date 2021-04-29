@@ -28,9 +28,10 @@ class UserTransformer extends TransformerAbstract
     /**
      * A Fractal transformer.
      *
+     * @param User $user
      * @return array
      */
-    public function transform(User $user)
+    public function transform(User $user): array
     {
         return ['user' => [
             'id' => $user->id,
