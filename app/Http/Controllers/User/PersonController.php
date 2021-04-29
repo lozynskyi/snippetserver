@@ -3,22 +3,13 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
-use App\Transformers\Users\UserTransformer;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PersonController extends Controller
 {
-    public function __construct()
+    public function show(User $user)
     {
-        $this->middleware(['auth:api']);
-    }
-
-    public function __invoke(Request $request): array
-    {
-
-        return fractal()
-            ->item($request->user())
-            ->transformWith(new UserTransformer())
-            ->toArray();
+        dd($user);
     }
 }
