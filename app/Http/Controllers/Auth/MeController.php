@@ -15,7 +15,6 @@ class MeController extends Controller
 
     public function __invoke(Request $request): array
     {
-
         return fractal()
             ->item($request->user())
             ->transformWith(new UserTransformer())
