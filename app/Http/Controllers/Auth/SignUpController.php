@@ -4,12 +4,13 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Transformers\Users\UserTransformer;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class SignUpController extends Controller
 {
-    public function __invoke(Request $request): JsonResponse
+    public function __invoke(Request $request): array
     {
         $this->validate($request, [
             'email' => 'required|email|unique:users,email',
