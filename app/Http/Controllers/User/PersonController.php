@@ -15,4 +15,13 @@ class PersonController extends Controller
             ->transformWith(new PublicUserTransformer())
             ->toArray();
     }
+    public function update(User $user)
+    {
+        $this->authorize('as', $user);
+
+        return fractal()
+            ->item($user)
+            ->transformWith(new PublicUserTransformer())
+            ->toArray();
+    }
 }
