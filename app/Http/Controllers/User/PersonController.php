@@ -23,7 +23,6 @@ class PersonController extends Controller
     public function update(User $user, Request $request)
     {
         try {
-
             $this->authorize('as', $user);
 
             $this->validate($request, [
