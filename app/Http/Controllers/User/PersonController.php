@@ -20,7 +20,7 @@ class PersonController extends Controller
             ->toArray();
     }
 
-    public function update(User $user, Request $request): \Illuminate\Http\JsonResponse
+    public function update(User $user, Request $request)
     {
         try {
 
@@ -32,7 +32,6 @@ class PersonController extends Controller
                 'name' => 'required',
                 'password' => 'nullable|min:6'
             ]);
-
             $user->update(
                 $request->only('email', 'name', 'username')
             );
