@@ -2,7 +2,7 @@
     "name": "lozynskyi/snippetserver",
     "type": "project",
     "description": "SnippetServer",
-    "keywords": ["framework", "laravel"],
+    "keywords": ["SnippetServer"],
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
