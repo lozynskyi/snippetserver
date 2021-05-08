@@ -9,7 +9,12 @@ class UserPolicy
 {
     use HandlesAuthorization;
 
-    public function as(User $authenticatedUser, User $user)
+    /**
+     * @param User $authenticatedUser
+     * @param User $user
+     * @return bool
+     */
+    public function as(User $authenticatedUser, User $user): bool
     {
         return $authenticatedUser->id === $user->id;
     }
