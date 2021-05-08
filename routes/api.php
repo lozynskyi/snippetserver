@@ -11,5 +11,5 @@ Route::group(['prefix'=>'auth', 'namespace'=>'App\Http\Controllers\Auth'], funct
 
 Route::group(['prefix'=>'user/{user}', 'namespace'=>'App\Http\Controllers\User'], function() {
     Route::get('', 'PersonController@show');
-    Route::patch('', 'PersonController@update');
+    Route::post('', 'PersonController@update');
 });
