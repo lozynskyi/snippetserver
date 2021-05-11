@@ -30,9 +30,11 @@ class RefreshTokenController extends Controller
     protected function respondWithToken(string $token): array
     {
         return [
-            'access_token' => $token,
-            'token_type' => 'bearer',
-            'expires_in' => auth()->factory()->getTTL() * 60
+            'data' => [
+                'token' => $token,
+                'token_type' => 'bearer',
+                'expires_in' => auth()->factory()->getTTL() * 60
+            ]
         ];
     }
 }
