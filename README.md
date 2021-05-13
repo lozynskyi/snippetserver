@@ -8,3 +8,4 @@ ServerAPI for host vue-client
 4. ~~Add Policy for auth endpoint.~~
 5. Add CORS for api.
 6. ~~Add laravel refreshToken endpoint.~~
+7. Check for laravel octane.
