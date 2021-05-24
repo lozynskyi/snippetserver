@@ -12,6 +12,7 @@
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
         "spatie/laravel-fractal": "^5.8",
+        "casbin/laravel-authz": "^2.3"
         "tymon/jwt-auth": "^1.0"
     },
     "require-dev": {
