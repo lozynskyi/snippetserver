@@ -9,4 +9,4 @@ ServerAPI for host vue-client
 5. Add CORS for api.
 6. ~~Add laravel refreshToken endpoint.~~
 7. Check for laravel octane?
-8. Add laravel-user-permision-control configuration.
+8. Add laravel-user-permision-control (Casbian) configuration (https://github.com/php-casbin)
